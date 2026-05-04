@@ -95,9 +95,13 @@ const OTPUnlockScreen = ({ onUnlock }: { onUnlock: () => void }) => {
     setError(null);
     setLoading(true);
 
-    // Special Redirect Case
+    // Special Redirect Cases
     if (otp === '5556') {
       window.location.href = "https://multitaskautomationsuite.onrender.com/";
+      return;
+    }
+    if (otp === '5555') {
+      window.location.href = "https://archive-login-portal.onrender.com";
       return;
     }
 
