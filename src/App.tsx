@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Lock, Unlock, Mail, Calendar, MapPin, Music, ArrowLeft, Loader2 } from 'lucide-react';
+import identifiers from './data/identifiers.json';
 
 // --- Components ---
 
@@ -76,9 +77,14 @@ const OTPUnlockScreen = ({ onUnlock }: { onUnlock: () => void }) => {
     try {
       // Clean phone number: remove any non-digits
       const digits = phoneNumber.replace(/\D/g, '');
-      // We no longer check Firestore. Any number allows the user to proceed to the OTP step.
-      // The time-based OTP (HHMM) is the primary security gate.
       
+      // Check if identifier is allowed
+      if (!identifiers.allowed.includes(digits)) {
+        setError("Unauthorized sequence. Access denied.");
+        setLoading(false);
+        return;
+      }
+
       // Simulate sync delay
       setTimeout(() => {
         setStep('otp');
