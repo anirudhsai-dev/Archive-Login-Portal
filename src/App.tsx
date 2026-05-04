@@ -343,6 +343,7 @@ const MemoryCard = ({ title, image, index, onReveal }: MemoryCardProps) => {
           src={image}
           alt={title}
           className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${!isRevealed ? 'blur-xl opacity-20' : 'blur-0 opacity-100'}`}
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
@@ -401,10 +402,11 @@ const LoveLetter = () => (
       <div className="pt-8 flex flex-col items-center gap-4">
         <span className="font-bold text-gray-400 tracking-[0.3em] uppercase text-xs">Forever Yours</span>
         <img 
-          src="/signature.png" 
+          src="https://lh3.googleusercontent.com/d/1CKCSh-0iuKmNTKpKIuJJ88Ob6D8-qg9H" 
           alt="Signature" 
           className="h-16 object-contain"
           style={{ filter: 'invert(1)' }}
+          referrerPolicy="no-referrer"
         />
       </div>
     </div>
@@ -428,15 +430,15 @@ export default function App() {
     },
     {
       title: "The Home Visit",
-      image: "/img/img1.jpg",
+      image: "https://lh3.googleusercontent.com/d/1DVaRroCItOAE4ktR4USQp4ALFEQ6JUz-",
     },
     {
       title: "The Parties",
-      image: "/img/img.jpg",
+      image: "https://lh3.googleusercontent.com/d/18AnElq04HV-vbYbeN60WMCh5vytAwIa8",
     },
     {
       title: "And Many More...",
-      image: "/img/img3.jpg",
+      image: "https://lh3.googleusercontent.com/d/1qT7SaGWFF6jBjmv_Rm4p_2x_LvZZAqM4",
     }
   ];
 
@@ -461,6 +463,7 @@ export default function App() {
               src={activeBackground} 
               className="w-full h-full object-cover blur-[50px] saturate-[1.3] brightness-105" 
               alt="ambient-memory"
+              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-red-50/5 mix-blend-overlay" />
           </motion.div>
