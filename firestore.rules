@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-\\+]+$'); }
+
+    // Collection for authorized phone numbers
+    match /authorized_users/{phoneNumber} {
+      // Allow individual lookup to check if a user is authorized before sending OTP
+      allow get: if isValidId(phoneNumber);
+      // Deny list to prevent scraping all numbers
+      allow list: if false;
+      // Writing should only be via Admin SDK or an Admin user if we had one
+      allow write: if false;
+    }
+  }
+}
