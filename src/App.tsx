@@ -343,7 +343,6 @@ const MemoryCard = ({ title, image, index, onReveal }: MemoryCardProps) => {
           src={image}
           alt={title}
           className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${!isRevealed ? 'blur-xl opacity-20' : 'blur-0 opacity-100'}`}
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
@@ -402,7 +401,7 @@ const LoveLetter = () => (
       <div className="pt-8 flex flex-col items-center gap-4">
         <span className="font-bold text-gray-400 tracking-[0.3em] uppercase text-xs">Forever Yours</span>
         <img 
-          src="/signature.png" 
+          src="signature.png" 
           alt="Signature" 
           className="h-16 object-contain"
           style={{ filter: 'invert(1)' }}
@@ -425,19 +424,19 @@ export default function App() {
   const memories = [
     {
       title: "The Trips",
-      image: "/img/img2.jpg",
+      image: "img/img2.jpg",
     },
     {
       title: "The Home Visit",
-      image: "/img/img1.jpg",
+      image: "img/img1.jpg",
     },
     {
       title: "The Parties",
-      image: "/img/img.jpg",
+      image: "img/img.jpg",
     },
     {
       title: "And Many More...",
-      image: "/img/img3.jpg",
+      image: "img/img3.jpg",
     }
   ];
 
@@ -462,7 +461,6 @@ export default function App() {
               src={activeBackground} 
               className="w-full h-full object-cover blur-[50px] saturate-[1.3] brightness-105" 
               alt="ambient-memory"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-red-50/5 mix-blend-overlay" />
           </motion.div>
