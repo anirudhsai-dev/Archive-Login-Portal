@@ -401,7 +401,7 @@ const LoveLetter = () => (
       <div className="pt-8 flex flex-col items-center gap-4">
         <span className="font-bold text-gray-400 tracking-[0.3em] uppercase text-xs">Forever Yours</span>
         <img 
-          src="signature.png" 
+          src="/signature.png" 
           alt="Signature" 
           className="h-16 object-contain"
           style={{ filter: 'invert(1)' }}
@@ -424,19 +424,19 @@ export default function App() {
   const memories = [
     {
       title: "The Trips",
-      image: "img/img2.jpg",
+      image: "https://lh3.googleusercontent.com/d/1dzqpW9ph8Lak8e0P3uEdCyCUMUcSKPte",
     },
     {
       title: "The Home Visit",
-      image: "img/img1.jpg",
+      image: "/img/img1.jpg",
     },
     {
       title: "The Parties",
-      image: "img/img.jpg",
+      image: "/img/img.jpg",
     },
     {
       title: "And Many More...",
-      image: "img/img3.jpg",
+      image: "/img/img3.jpg",
     }
   ];
 
